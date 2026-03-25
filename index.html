@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+
+<!-- SEO Meta Tags -->
+<title>Bots Guy AI - AI Lead Generation &amp; 24/7 Appointment Booking | Automate To Dominate</title>
+<meta name="description" content="Stop losing hot leads. Convert them 24/7 with AI-powered SMS, voice, and social media automation. Instantly qualify prospects and auto-book appointments. Book your free demo call today." />
+<meta property="og:title" content="Bots Guy AI - AI Lead Generation &amp; 24/7 Appointment Booking | Automate To Dominate" />
+<meta property="og:description" content="Stop losing hot leads. Convert them 24/7 with AI-powered SMS, voice, and social media automation. Instantly qualify prospects and auto-book appointments. Book your free demo call today." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bots Guy AI - AI Lead Generation &amp; 24/7 Appointment Booking | Automate To Dominate" />
+<meta name="twitter:description" content="Stop losing hot leads. Convert them 24/7 with AI-powered SMS, voice, and social media automation. Instantly qualify prospects and auto-book appointments. Book your free demo call today." />
+<!-- End SEO Meta Tags -->
+
+
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============================================================================ -->
+    <!-- ANIMATED GRID BACKGROUND: Subtle scanning grid pattern across viewport      -->
+    <!-- Creates futuristic HUD aesthetic with pulsing opacity                       -->
+    <!-- ============================================================================ -->
+    <div class="grid-background"></div>
+
+    <!-- ============================================================================ -->
+    <!-- PARTICLE CANVAS: Floating dots and particle effects for immersive feel      -->
+    <!-- Uses requestAnimationFrame for smooth 60fps animation                       -->
+    <!-- ============================================================================ -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ============================================================================ -->
+    <!-- NAVIGATION: Fixed sticky header with blur backdrop and glowing CTA         -->
+    <!-- Logo left, nav links right (hidden on mobile), animated button border       -->
+    <!-- Mobile hamburger menu that slides down on click                             -->
+    <!-- ============================================================================ -->
+    <nav>
+        <div class="nav-logo">
+            <img src="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1774396311911_BOTSGUY_2.png" alt="Bots Guy AI" style="aspect-ratio: 3.1405; object-fit: cover; object-position: center;">
+        </div>
+        <div class="nav-links">
+            <a onclick="scrollToSection('features')">Features</a>
+            <a onclick="scrollToSection('how-it-works')">How It Works</a>
+            <a onclick="scrollToSection('pricing')">Pricing</a>
+            <a onclick="scrollToSection('faq')">FAQ</a>
+            <a href="https://botsguy.com" class="nav-cta" target="_blank">FREE DEMO</a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- ============================================================================ -->
+    <!-- MOBILE MENU: Slide-out navigation for mobile devices                        -->
+    <!-- Triggered by hamburger button; closes when link is clicked                  -->
+    <!-- ============================================================================ -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a onclick="scrollToSection('features')">Features</a>
+        <a onclick="scrollToSection('how-it-works')">How It Works</a>
+        <a onclick="scrollToSection('pricing')">Pricing</a>
+        <a onclick="scrollToSection('faq')">FAQ</a>
+        <a href="https://botsguy.com" class="nav-cta" target="_blank">FREE DEMO</a>
+    </div>
+
+    <!-- ============================================================================ -->
+    <!-- HERO SECTION: Main landing area with typing animation and holographic orbs  -->
+    <!-- Left: Typed headline, subtext, CTA, channel pills                           -->
+    <!-- Right: Dark dashboard mockup with blinking stats and mouse tilt effect      -->
+    <!-- ============================================================================ -->
+    <section class="hero-section" data-section="hero">
+        <!-- Holographic glow orbs in background -->
+        <div class="hologram-orb orb-1"></div>
+        <div class="hologram-orb orb-2"></div>
+
+        <!-- Hero content: text and CTA -->
+        <div class="hero-content">
+            <div class="hero-eyebrow">AI-Powered Lead Automation</div>
+            <h1 class="hero-headline">
+                <span class="line">STOP LOSING HOT LEADS.</span>
+                <span class="line" style="display: none;">
+                    <span id="line2">CONVERT THEM 24/7 WITH AI.</span>
+                    <span class="typing-cursor" id="cursor2"></span>
+                </span>
+            </h1>
+            <p class="hero-subtext">
+                Instantly answer calls, texts, and DMs — qualify prospects, auto-book appointments, and close more deals while you sleep.
+            </p>
+            <a href="https://botsguy.com" class="hero-cta" target="_blank">BOOK FREE DEMO CALL</a>
+
+            <!-- Channel pills showing supported platforms -->
+            <div class="channel-pills">
+                <div class="channel-pill">📞 SMS</div>
+                <div class="channel-pill">🎤 Voice AI</div>
+                <div class="channel-pill">📸 Instagram DM</div>
+                <div class="channel-pill">👍 Facebook DM</div>
+                <div class="channel-pill">✉️ Email</div>
+                <div class="channel-pill">💬 Web Chat</div>
+            </div>
+        </div>
+
+        <!-- Hero visual: dashboard mockup with mouse tilt -->
+        <div class="hero-visual">
+            <div class="dashboard-mock" id="dashboard-mock">
+                <div class="dashboard-stat">
+                    <div class="dashboard-label">Active Conversations</div>
+                    <div class="dashboard-value">24</div>
+                </div>
+                <div class="dashboard-stat">
+                    <div class="dashboard-label">Leads Qualified Today</div>
+                    <div class="dashboard-value">18</div>
+                </div>
+                <div class="dashboard-stat">
+                    <div class="dashboard-label">Appointments Booked</div>
+                    <div class="dashboard-value">7</div>
+                </div>
+                <div class="dashboard-stat">
+                    <div class="dashboard-label">Response Time</div>
+                    <div class="dashboard-value">&lt;5s</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- STATS BAR: Key metrics with animated count-up on scroll (using RAF)         -->
+    <!-- Triggers when section enters viewport via Intersection Observer            -->
+    <!-- ============================================================================ -->
+    <section class="stats-section" data-section="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label">Min — Average Response Time</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="3">0</div>
+                <div class="stat-label">× — More Booked Appointments</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="24">0</div>
+                <div class="stat-label">/7 — Zero Manual Follow-Up</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="90">0</div>
+                <div class="stat-label">% — Lead Response Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- HOW IT WORKS: 3-step process with animated connecting line and step cards  -->
+    <!-- Connector line draws itself when section enters viewport                    -->
+    <!-- Step cards slide up with staggered delays                                  -->
+    <!-- ============================================================================ -->
+    <section class="how-it-works" data-section="how-it-works">
+        <div class="divider-line"></div>
+        <h2 class="section-title">How It Works</h2>
+
+        <div class="steps-container">
+            <div class="steps-connector" id="steps-connector"></div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Lead Comes In</div>
+                    <div class="step-desc">Instant AI response from any channel — SMS, voice, social, email, or web chat.</div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-title">AI Qualifies &amp; Nurtures</div>
+                    <div class="step-desc">Bot moves leads through your pipeline 24/7 — asks questions, captures info, schedules follow-ups.</div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Auto-Booked &amp; Closed</div>
+                    <div class="step-desc">Appointments land on your calendar automatically — qualified, confirmed, and ready to close.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- FEATURES SECTION: 6 feature cards with border sweep animation on scroll     -->
+    <!-- Cards slide up with staggered delays; border sweeps clockwise on hover      -->
+    <!-- ============================================================================ -->
+    <section class="features-section" data-section="features">
+        <div class="divider-line"></div>
+        <h2 class="section-title">Powerful Features</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-title">AI Voice Agent</div>
+                <div class="feature-desc">Natural conversations that qualify leads, answer FAQs, and book appointments without human intervention.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">SMS &amp; Email Automation</div>
+                <div class="feature-desc">Automated follow-ups, reminders, and nurture sequences that keep leads engaged and moving forward.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <div class="feature-title">Instagram &amp; Facebook DM Bots</div>
+                <div class="feature-desc">Respond instantly to DMs on social platforms — capture leads where they already are.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <div class="feature-title">Website Chat Widget</div>
+                <div class="feature-desc">AI-powered live chat that qualifies visitors, answers questions, and books appointments 24/7.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Full CRM &amp; Pipeline</div>
+                <div class="feature-desc">GHL-powered CRM with lead scoring, automation workflows, and real-time analytics dashboard.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <div class="feature-title">Appointment Auto-Booking</div>
+                <div class="feature-desc">Seamlessly sync with your calendar — double-booking prevention and automated confirmations.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- TESTIMONIALS SECTION: Customer success stories with floating animation      -->
+    <!-- Cards float up and down subtly; each has different animation offset        -->
+    <!-- ============================================================================ -->
+    <section class="testimonials-section" data-section="testimonials">
+        <div class="divider-line"></div>
+        <h2 class="section-title">What Our Customers Say</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Since implementing Bots Guy, we've seen a 40% increase in booked calls. The AI handles initial qualification perfectly, and our team focuses only on closing."
+                </div>
+                <div class="testimonial-author">Mike R.</div>
+                <div class="testimonial-role">HVAC Service Owner</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Our Instagram DM bot paid for itself in the first month. Leads that would have gone cold now get instant responses. Game changer for our med spa."
+                </div>
+                <div class="testimonial-author">Sarah L.</div>
+                <div class="testimonial-role">Medical Spa Manager</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "I wake up with 5-10 qualified appointments already on my calendar. Bots Guy handles the entire lead qualification and booking process while I sleep."
+                </div>
+                <div class="testimonial-author">Dave T.</div>
+                <div class="testimonial-role">Real Estate Agent</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- PRICING SECTION: 3 tiers with hover laser scan effect                       -->
+    <!-- Featured tier highlighted with cyan border and slight scale-up              -->
+    <!-- Hover effect: gradient line sweeps top to bottom                            -->
+    <!-- ============================================================================ -->
+    <section class="pricing-section" data-section="pricing">
+        <div class="divider-line"></div>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-name">Launch</div>
+                <div class="pricing-price">$497</div>
+                <div class="pricing-period">/month, billed monthly</div>
+                <ul class="pricing-features">
+                    <li>✓ SMS + Email Automation</li>
+                    <li>✓ Website Chat Bot</li>
+                    <li>✓ Basic CRM</li>
+                    <li>✓ 2 Channels</li>
+                    <li>✓ Email Support</li>
+                </ul>
+                <button class="pricing-cta" onclick="window.open('https://botsguy.com', '_blank')">Get Started</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="pricing-badge">MOST POPULAR</div>
+                <div class="pricing-name">Dominate</div>
+                <div class="pricing-price">$997</div>
+                <div class="pricing-period">/month, billed monthly</div>
+                <ul class="pricing-features">
+                    <li>✓ Full Omnichannel (SMS, Email, Voice, Chat)</li>
+                    <li>✓ AI Voice Agent</li>
+                    <li>✓ Instagram &amp; Facebook DM Bots</li>
+                    <li>✓ Advanced CRM + Pipeline</li>
+                    <li>✓ Appointment Auto-Booking</li>
+                    <li>✓ Priority Support</li>
+                </ul>
+                <button class="pricing-cta" onclick="window.open('https://botsguy.com', '_blank')">Get Started</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-name">Full-Stack</div>
+                <div class="pricing-price">Custom</div>
+                <div class="pricing-period">Billed monthly</div>
+                <ul class="pricing-features">
+                    <li>✓ Everything in Dominate</li>
+                    <li>✓ White-Label Solution</li>
+                    <li>✓ GHL Snapshots &amp; Training</li>
+                    <li>✓ Agency Management Suite</li>
+                    <li>✓ Dedicated Account Manager</li>
+                </ul>
+                <button class="pricing-cta" onclick="window.open('https://botsguy.com', '_blank')">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- FAQ SECTION: Expandable accordion with smooth max-height animation          -->
+    <!-- Click question to toggle answer; toggle icon rotates on open                -->
+    <!-- ============================================================================ -->
+    <section class="faq-section" data-section="faq">
+        <div class="divider-line"></div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How quickly can I get up and running?</span>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    Most customers are fully set up and handling leads within 24-48 hours. Our onboarding team handles configuration, and your AI agents start working immediately.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can the AI handle my specific business type?</span>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    Yes. We've successfully deployed Bots Guy for HVAC, real estate, medical spas, fitness, home services, and many other industries. We customize the bot's behavior and responses for your specific needs.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if I need to make changes to the bot's responses?</span>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    You have full control. Update scripts, qualification questions, and workflows directly in the dashboard. Changes take effect immediately — no coding required.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is my customer data secure?</span>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. We use enterprise-grade encryption, HIPAA compliance options, and SOC 2 certification. Your data is always protected and never shared with third parties.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I integrate with my existing CRM or calendar?</span>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    Yes. Bots Guy integrates with Google Calendar, Outlook, Zapier, Make, and most major CRM platforms. Custom integrations are available for enterprise customers.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- FINAL CTA SECTION: High-impact conversion section with large headline        -->
+    <!-- Button has animated border chase effect; full width on mobile               -->
+    <!-- ============================================================================ -->
+    <section class="final-cta-section" data-section="final-cta">
+        <h2 class="final-cta-text">Your Leads Are Waiting Right Now.</h2>
+        <a href="https://botsguy.com" class="final-cta-button" target="_blank">Book Free Demo Call</a>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- FOOTER: Dark footer with links and copyright                                -->
+    <!-- Links highlight on hover; copyright year is dynamic (2026)                  -->
+    <!-- ============================================================================ -->
+    <footer>
+        <div class="footer-links">
+            <a onclick="scrollToSection('hero')">Home</a>
+            <a href="https://botsguy.com" target="_blank">Privacy Policy</a>
+            <a href="https://botsguy.com" target="_blank">Terms of Service</a>
+            <a href="https://botsguy.com" target="_blank">Contact</a>
+        </div>
+        <p>© 2026 Bots Guy AI. All rights reserved. Automate To Dominate.</p>
+    </footer>
+
+    
+
+  <script src="script.js"></script>
+</body></html>
